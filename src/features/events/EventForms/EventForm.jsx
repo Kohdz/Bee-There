@@ -9,11 +9,26 @@ class EventForm extends Component {
         city: '',
         venue: '',
         hostedBy: '',
+    };
+
+    componentDidMount() {
+        // when component mounts, it will check if selectedEvent is null
+        if (this.props.selectedEvent !== null) {
+            this.setState({
+                // we spread the properties of out selectedEvents into an array
+                // it will override out state 
+                ... this.props.selectedEvent
+            })
+        }
     }
 
     handleFormSubmit = evt => {
         evt.preventDefault();
-        this.props.createEvent(this.state)
+        if (this.state.id) {
+            this.props.updateEvent(this.state);
+        } else {
+            this.props.createEvent(this.state)
+        }
     }
 
     handleInputChange = ({target: {name, value}}) => {

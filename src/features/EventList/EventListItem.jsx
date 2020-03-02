@@ -6,7 +6,7 @@ class EventListItem extends Component {
     render() {
 
         // we are destructuring events
-        const {event} = this.props;
+        const {event, selectEvent, deleteEvent} = this.props;
         return  (
             <Segment.Group>
                 <Segment>
@@ -36,8 +36,9 @@ class EventListItem extends Component {
                     </List>
                 </Segment>
                 <Segment clearing>
-                    <span>{event.Description}</span>
-                    <Button as="a" color="teal" floated="right" content="View" />
+                    <span>{event.description}</span>
+                    <Button onClick={() => selectEvent(event)} as="a" color="teal" floated="right" content="View" />
+                    <Button onClick={() => deleteEvent(event.id)} as="a" color="red" floated="right" content="Delete" />
                 </Segment>
             </Segment.Group>
 
