@@ -24,10 +24,11 @@ body {
   display: flex;
   align-items: center;
   background-image: linear-gradient(
-          135deg,
+          /* 135deg,
           rgb(24, 42, 115) 0%,
           rgb(33, 138, 174) 69%,
-          rgb(32, 167, 172) 89%
+          rgb(32, 167, 172) 89% */
+          to right, #ffff00, #ffd100, #ffbb00, #ffa500
   ) !important;
   height: 100vh;
 }
