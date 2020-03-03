@@ -1,6 +1,6 @@
 import React,{ Component } from 'react'
 import { Menu, Container, Button } from 'semantic-ui-react';
-import { NavLink, Link, withRouter } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import SignedOutMenu from '../Menus/SignedOutMenu';
 import SignedInMenu from '../Menus/SignedInMenu';
 
@@ -34,7 +34,7 @@ class NavBar extends Component {
                 <img src="assets/logo.png" alt="logo" />
                     BeeThair
                 </Menu.Item>
-                <Menu.Item as={NavLink} to='/events' name="Events" />
+                <Menu.Item as={NavLink} exact to='/events' name="Events" />
                 <Menu.Item as={NavLink} to='/people' name="People" />
                 <Menu.Item as={NavLink} to='/test' name="Tests" />
                 <Menu.Item>
