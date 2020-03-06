@@ -13,6 +13,7 @@ class SimpleMap extends Component {
 
   render() {
     const { latlng } = this.props;
+    console.log(latlng);
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '300px', width: '100%' }}>

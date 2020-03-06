@@ -21,11 +21,13 @@ const mapState = (state, ownProps) => {
 };
 
 const EventDetailedPage = ({ event }) => {
+  console.log(event);
+  console.log(event.attendees);
   return (
     <Grid>
       <Grid.Column width={10}>
         <EventDetailedHeader event={event} />
-        <EventDetailedInfo />
+        <EventDetailedInfo event={event} />
         <EventDetailedChat />
       </Grid.Column>
       <Grid.Column width={6}>

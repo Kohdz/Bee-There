@@ -4,8 +4,10 @@ import EventDetailedMap from './EventDetailedMap';
 
 const EventDetailedInfo = ({ event }) => {
   const [isMapOpen, showMapToggle] = useState(false);
-  // const { event } = this.props;
-  console.log(event);
+
+  // console.log(event.venueLatLng.lng);
+  // console.log(event.venueLatLng.lat);
+  // console.log(event);
   return (
     <Segment.Group>
       <Segment attached='top'>
@@ -37,20 +39,26 @@ const EventDetailedInfo = ({ event }) => {
             <span>{event.venue}</span>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Button
-              onClick={this.showMapToggle}
-              color='teal'
-              size='tiny'
-              content={this.state.showMap ? 'Hide Map' : 'Show Map'}
-            />
+            {
+              <Button
+                onClick={() => showMapToggle(!isMapOpen)}
+                color='teal'
+                size='tiny'
+                content='Show Map'
+                content={isMapOpen ? 'Hide Map' : 'Show Map'}
+              />
+            }
           </Grid.Column>
         </Grid>
       </Segment>
-      {this.state.showMap && (
+      {isMapOpen && (
         <EventDetailedMap
           lat={event.venueLatLng.lat}
           lng={event.venueLatLng.lng}
         />
+
+        // lat: 59.95,
+        // lng: 30.33
       )}
     </Segment.Group>
   );

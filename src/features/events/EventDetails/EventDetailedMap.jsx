@@ -5,13 +5,15 @@ import GoogleMapReact from 'google-map-react';
 const Marker = () => <Icon name='marker' size='big' color='orange' />;
 
 const EventDetailedMap = ({ lat, lng }) => {
+  const loc = { lat: lat, lng: lng };
+
   const zoom = 14;
   return (
-    <Segment attached='bottom'>
+    <Segment attached='bottom' style={{ padding: 0 }}>
       <div style={{ height: '300px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyDexVwoh02BY7IYdSi0cI20dkUF7SwzmpM' }}
-          defaultCenter={(lat, lng)}
+          defaultCenter={loc}
           defaultZoom={zoom}
         >
           <Marker lat={lat} lng={lng} />

@@ -60,18 +60,18 @@ const initialState = [
   }
 ];
 
-export const createEvent = (state, payload) => {
+const createEvent = (state, payload) => {
   return [...state, payload.event];
 };
 
-export const updateEvent = (state, payload) => {
+const updateEvent = (state, payload) => {
   return [
     ...state.filter(event => event.id !== payload.event.id),
     payload.event
   ];
 };
 
-export const deleteEvent = (state, payload) => {
+const deleteEvent = (state, payload) => {
   return [...state.filter(event => event.id !== payload.eventId)];
 };
 
