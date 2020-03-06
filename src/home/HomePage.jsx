@@ -1,26 +1,33 @@
-import React from 'react'
-import { Container, Header, Image, Button, Icon, Segment } from 'semantic-ui-react';
+import React from 'react';
+import {
+  Container,
+  Header,
+  Image,
+  Button,
+  Icon,
+  Segment
+} from 'semantic-ui-react';
 
-const HomePage  = ({history}) => {
-    return(
-        <Segment inverted textAlign='center' vertical className='masthead'>
-            <Container text>
-                <Header as='h1' inverted>
-                <Image
-                  size='massive'
-                  src='/assets/logo.png'
-                  alt='logo'
-                  style={{ marginBottom: 12 }}
-                />
-                Beethair
-                </Header>
-                <Button onClick={() => history.push('/events')} size='huge' inverted>
-                Get started
-                <Icon name='right arrow' inverted />
-              </Button>
-            </Container>
-        </Segment>
-    )
-}
+const HomePage = ({ history }) => {
+  return (
+    <Segment inverted textAlign='center' vertical className='masthead'>
+      <Container text>
+        <Header as='h1' inverted>
+          <Image
+            size='massive'
+            src='/assets/logo.png'
+            alt='logo'
+            style={{ marginBottom: 12 }}
+          />
+          Bee•there
+        </Header>
+        <Button onClick={() => history.push('/events')} size='huge' inverted>
+          Get started
+          <Icon name='right arrow' inverted />
+        </Button>
+      </Container>
+    </Segment>
+  );
+};
 
 export default HomePage;

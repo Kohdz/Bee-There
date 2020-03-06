@@ -8,29 +8,28 @@ import { Provider } from 'react-redux';
 import { configureStore } from './app/store/configureStore';
 import ScrollToTop from './app/common/util/ScrollToTop';
 
+const rootEl = document.getElementById('root');
 
-const rootEl = document.getElementById('root')
 const store = configureStore();
-
-
+console.log(store.getState());
 
 let render = () => {
-    ReactDOM.render(
-        <Provider store={store}>
-            <BrowserRouter>
-               <ScrollToTop>
-                    <App />
-               </ScrollToTop>
-            </BrowserRouter>
-        </Provider>,
-        rootEl
-        );
+  ReactDOM.render(
+    <Provider store={store}>
+      <BrowserRouter>
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
+      </BrowserRouter>
+    </Provider>,
+    rootEl
+  );
 };
 
 if (module.hot) {
-    module.hot.accept('./app/layout/App', () => {
-        setTimeout(render);
-    })
+  module.hot.accept('./app/layout/App', () => {
+    setTimeout(render);
+  });
 }
 
 render();
