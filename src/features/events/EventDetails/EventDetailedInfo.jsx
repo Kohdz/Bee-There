@@ -4,10 +4,6 @@ import EventDetailedMap from './EventDetailedMap';
 
 const EventDetailedInfo = ({ event }) => {
   const [isMapOpen, showMapToggle] = useState(false);
-
-  // console.log(event.venueLatLng.lng);
-  // console.log(event.venueLatLng.lat);
-  // console.log(event);
   return (
     <Segment.Group>
       <Segment attached='top'>
@@ -44,7 +40,6 @@ const EventDetailedInfo = ({ event }) => {
                 onClick={() => showMapToggle(!isMapOpen)}
                 color='teal'
                 size='tiny'
-                content='Show Map'
                 content={isMapOpen ? 'Hide Map' : 'Show Map'}
               />
             }
