@@ -34,6 +34,7 @@ class NavBar extends Component {
     const { auth } = this.props;
     const { authenticated } = auth.authenticated;
 
+    console.log(auth.currentUser);
     return (
       <Menu inverted fixed='top'>
         <Container>
@@ -42,7 +43,7 @@ class NavBar extends Component {
             Bee•There
           </Menu.Item>
           <Menu.Item as={NavLink} exact to='/events' name='Events' />
-          {authenticated && (
+          {auth && (
             <Fragment>
               <Menu.Item as={NavLink} to='/people' name='People' />
               <Menu.Item as={NavLink} to='/test' name='Tests' />
@@ -58,7 +59,7 @@ class NavBar extends Component {
               </Menu.Item>
             </Fragment>
           )}
-          {authenticated ? (
+          {auth.authenticated ? (
             <SignedInMenu
               signOut={this.handleSignOut}
               currentUser={auth.currentUser}
