@@ -35,7 +35,7 @@ const LoginForm = ({ login, handleSubmit, error, socialLogin }) => {
         <Button fluid size='large' color='teal'>
           Login
         </Button>
-        <Divider horizonal>Or</Divider>
+        <Divider horizontal>Or</Divider>
         <SocialLogin socialLogin={socialLogin} />
       </Segment>
     </Form>
