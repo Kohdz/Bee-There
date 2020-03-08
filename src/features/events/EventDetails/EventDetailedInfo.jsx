@@ -25,8 +25,8 @@ const EventDetailedInfo = ({ event }) => {
           <Grid.Column width={15}>
             {event.date && (
               <span>
-                {format(parseISO(event.date), 'EEEE do LLL')} at{' '}
-                {format(parseISO(event.date), 'h:mm a')}
+                {format(event.date.toDate(), 'EEEE do LLL')} at{' '}
+                {format(event.date.toDate(), 'h:mm a')}
               </span>
             )}
           </Grid.Column>
@@ -41,14 +41,12 @@ const EventDetailedInfo = ({ event }) => {
             <span>{event.venue}</span>
           </Grid.Column>
           <Grid.Column width={4}>
-            {
-              <Button
-                onClick={() => showMapToggle(!isMapOpen)}
-                color='teal'
-                size='tiny'
-                content={isMapOpen ? 'Hide Map' : 'Show Map'}
-              />
-            }
+            <Button
+              onClick={() => showMapToggle(!isMapOpen)}
+              color='teal'
+              size='tiny'
+              content={isMapOpen ? 'Hide map' : 'Show map'}
+            />
           </Grid.Column>
         </Grid>
       </Segment>
@@ -57,9 +55,6 @@ const EventDetailedInfo = ({ event }) => {
           lat={event.venueLatLng.lat}
           lng={event.venueLatLng.lng}
         />
-
-        // lat: 59.95,
-        // lng: 30.33
       )}
     </Segment.Group>
   );
