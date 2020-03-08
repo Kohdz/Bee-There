@@ -4,7 +4,6 @@ import {
   ASYNC_ACTION_ERROR
 } from './asyncConstants';
 import { createReducer } from '../../app/common/util/reducerUtils';
-import { asyncActionFinish } from './asyncActions';
 
 const initialState = {
   loading: false,
@@ -37,6 +36,6 @@ const asyncActionError = state => {
 
 export default createReducer(initialState, {
   [ASYNC_ACTION_START]: asyncActionStarted,
-  [ASYNC_ACTION_FINSIH]: asyncActionFinish,
+  [ASYNC_ACTION_FINSIH]: asyncActionFinished,
   [ASYNC_ACTION_ERROR]: asyncActionError
 });
