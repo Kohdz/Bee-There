@@ -1,4 +1,4 @@
-import { React, Component } from 'react';
+import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 import EventDetailedHeader from './EventsDetailedHeader';
 import EventDetailedInfo from './EventDetailedInfo';
