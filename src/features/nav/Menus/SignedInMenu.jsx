@@ -3,8 +3,6 @@ import { Menu, Image, Dropdown } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 const SignedInMenu = ({ signOut, profile, auth }) => {
-  console.log(profile);
-  console.log(profile.displayName);
   return (
     <Menu.Item position='right'>
       <Image

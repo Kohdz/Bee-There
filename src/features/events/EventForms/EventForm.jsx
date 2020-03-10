@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { reduxForm, Field } from 'redux-form';
 import { Segment, Form, Button, Grid, Header } from 'semantic-ui-react';
-import { createEvent, updateEvent } from '../eventAction';
+import { createEvent, updateEvent, cancelToggle } from '../eventAction';
 import TextInput from '../../../app/common/forms/TextInput';
 import TextArea from '../../../app/common/forms/TextArea';
 import SelectInput from '../../../app/common/forms/selectInput';
@@ -17,6 +17,7 @@ import {
 import PlaceInput from '../../../app/common/forms/PlaceInput';
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import { withFirestore } from 'react-redux-firebase';
+
 const mapState = (state, ownProps) => {
   const eventId = ownProps.match.params.id;
 
@@ -38,8 +39,8 @@ const mapState = (state, ownProps) => {
 
 const actions = {
   createEvent,
-  updateEvent
-  // cancelToggle
+  updateEvent,
+  cancelToggle
 };
 
 const validate = combineValidators({

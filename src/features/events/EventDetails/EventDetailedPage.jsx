@@ -6,8 +6,8 @@ import EventDetailedChat from './EventDetailedChat';
 import EventDetailedSidebar from './EventDetailedSidebar';
 import { connect } from 'react-redux';
 import { withFirestore } from 'react-redux-firebase';
-import { toastr } from 'react-redux-toastr';
 import { objectToArray } from '../../../app/common/util/helpers';
+import { goingToEvent, cancelGoingToEvent } from '../../../users/userActions';
 
 const mapState = (state, ownProps) => {
   const eventId = ownProps.match.params.id;
@@ -30,8 +30,8 @@ const mapState = (state, ownProps) => {
 };
 
 const actions = {
-  // goingToEvent,
-  // cancelGoingToEvent
+  goingToEvent,
+  cancelGoingToEvent
 };
 
 class EventDetailedPage extends Component {

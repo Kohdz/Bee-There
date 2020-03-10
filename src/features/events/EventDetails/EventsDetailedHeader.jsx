@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Segment, Header, Button, Item, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 
 const eventImageTextStyle = {
   position: 'absolute',

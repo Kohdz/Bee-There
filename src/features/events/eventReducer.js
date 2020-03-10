@@ -34,4 +34,4 @@ export default createReducer(initialState, {
   [FETCH_EVENTS]: fetchEvents
 });
 
-console.log(updateEvent);
+// console.log(updateEvent);

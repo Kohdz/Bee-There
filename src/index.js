@@ -14,7 +14,7 @@ const rootEl = document.getElementById('root');
 
 const store = configureStore();
 
-console.log(store.getState());
+// console.log(store.getState());
 
 let render = () => {
   ReactDOM.render(
