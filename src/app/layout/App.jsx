@@ -11,6 +11,7 @@ import SettingsDashboard from '../../users/settings/SettingsDashboard';
 import EventForm from '../../features/events/EventForms/EventForm';
 import TestComponent from '../../features/TestArea/TestComonent';
 import ModalManager from '../../features/modals/ModalManager';
+import { UserIsAuthenticated } from '../../features/auth/authWrapper';
 
 class App extends Component {
   render() {
@@ -27,12 +28,21 @@ class App extends Component {
                 <Switch key={this.props.location.key}>
                   <Route exact path='/events' component={EventDashboard} />
                   <Route path='/events/:id' component={EventDetailedPage} />
-                  <Route path='/people' component={PeopleDashboard} />
-                  <Route path='/profile/:id' component={UserDetailedPage} />
-                  <Route path='/settings' component={SettingsDashboard} />
+                  <Route
+                    path='/people'
+                    component={UserIsAuthenticated(PeopleDashboard)}
+                  />
+                  <Route
+                    path='/profile/:id'
+                    component={UserIsAuthenticated(UserDetailedPage)}
+                  />
+                  <Route
+                    path='/settings'
+                    component={UserIsAuthenticated(SettingsDashboard)}
+                  />
                   <Route
                     path={['/createEvent', '/manage/:id']}
-                    component={EventForm}
+                    component={UserIsAuthenticated(EventForm)}
                   />
                   <Route path='/test' component={TestComponent} />
                 </Switch>
