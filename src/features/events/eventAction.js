@@ -78,7 +78,6 @@ export const updateEvent = event => {
     }
   };
 };
-
 export const cancelToggle = (cancelled, eventId) => async (
   dispatch,
   getState,
@@ -102,7 +101,7 @@ export const cancelToggle = (cancelled, eventId) => async (
 
 export const getEventsForDashboard = lastEvent => async (
   dispatch,
-  gerState
+  getState
 ) => {
   let today = new Date();
   const firestore = firebase.firestore();
@@ -123,27 +122,29 @@ export const getEventsForDashboard = lastEvent => async (
           .where('date', '>=', today)
           .orderBy('date')
           .startAfter(startAfter)
-          .limit(2))
+          .limit(3))
       : (query = eventsRef
           .where('date', '>=', today)
           .orderBy('date')
-          .limit(2));
+          .limit(3));
 
     let querySnap = await query.get();
 
     if (querySnap.docs.length === 0) {
       dispatch(asyncActionFinish());
-      return;
+      return querySnap;
     }
     // console.log(querySnap);
     let events = [];
     for (let i = 0; i < querySnap.docs.length; i++) {
-      let evt = { ...querySnap.docChanges[i].data(), id: querySnap.docs[i].id };
+      // let evt = { ...querySnap.docChanges[i].data(), id: querySnap.docs[i].id };
+      let evt = { ...querySnap.docs[i].data(), id: querySnap.docs[i].id };
       events.push(evt);
     }
     // console.log(events)
     dispatch({ type: FETCH_EVENTS, payload: { events } });
-    dispatch(ASYNC_ACTION_FINSIH());
+    dispatch(asyncActionFinish());
+    return querySnap;
   } catch (error) {
     console.log(error);
     dispatch(asyncActionError());

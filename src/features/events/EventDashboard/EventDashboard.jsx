@@ -29,7 +29,8 @@ class EventDashboard extends Component {
 
   state = {
     moreEvents: false,
-    loadingInitial: true
+    loadingInitial: true,
+    loadedEvents: []
   };
 
   async componentDidMount() {
