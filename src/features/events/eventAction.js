@@ -170,7 +170,7 @@ export const addEventComment = (eventId, values, parentId) => async (
   try {
     await firebase.push(`event_chat/${eventId}`, newComment);
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     toastr.error('Oops', 'Problem adding comment');
   }
 };

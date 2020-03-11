@@ -88,7 +88,6 @@ class EventDetailedPage extends Component {
     if (loadingEvent) return <LoadingComponent />;
 
     if (Object.keys(event).length === 0) return <NotFound />;
-
     return (
       <Grid>
         <Grid.Column width={10}>
@@ -112,7 +111,7 @@ class EventDetailedPage extends Component {
           )}
         </Grid.Column>
         <Grid.Column width={6}>
-          <EventDetailedSidebar attendees={attendees} />
+          <EventDetailedSidebar attendees={attendees} eventId={event.id} />
         </Grid.Column>
       </Grid>
     );

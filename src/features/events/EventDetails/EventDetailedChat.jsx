@@ -18,7 +18,7 @@ class EventDetailedChat extends Component {
   };
 
   handleCloseReplyForm = () => {
-    this.setStete({
+    this.setState({
       selectedCommentId: null,
       showReplyForm: false
     });
