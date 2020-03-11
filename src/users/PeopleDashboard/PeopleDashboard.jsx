@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+
+const divStyle = {
+  display: 'flex',
+  justifyContent: 'center'
+};
 
 const PeopleDashboard = () => {
-    return(
-        <div>
-            <h1>People Dashboard</h1>
-        </div>
-    )
-}
+  return (
+    <div>
+      <h1 style={divStyle}>Under Construction</h1>
+    </div>
+  );
+};
 
 export default PeopleDashboard;

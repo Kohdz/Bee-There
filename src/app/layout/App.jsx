@@ -9,7 +9,7 @@ import PeopleDashboard from '../../users/PeopleDashboard/PeopleDashboard';
 import UserDetailedPage from '../../users/UserDetailed/UserDetailedPage';
 import SettingsDashboard from '../../users/settings/SettingsDashboard';
 import EventForm from '../../features/events/EventForms/EventForm';
-import TestComponent from '../../features/TestArea/TestComonent';
+// import TestComponent from '../../features/TestArea/TestComonent';
 import ModalManager from '../../features/modals/ModalManager';
 import { UserIsAuthenticated } from '../../features/auth/authWrapper';
 import NotFound from './NotFound';
@@ -45,7 +45,7 @@ class App extends Component {
                     path={['/createEvent', '/manage/:id']}
                     component={UserIsAuthenticated(EventForm)}
                   />
-                  <Route path='/test' component={TestComponent} />
+                  {/* <Route path='/test' component={TestComponent} /> */}
                   <Route component={NotFound} />
                 </Switch>
               </Container>
