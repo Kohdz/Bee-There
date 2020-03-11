@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Segment,
-  Header,
-  Menu,
-  Grid,
-  Card,
-  Image,
-  Tab
-} from 'semantic-ui-react';
+import { Segment, Header, Grid, Card, Image, Tab } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import format from 'date-fns/format';
 

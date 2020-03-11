@@ -97,7 +97,7 @@ class EventForm extends Component {
         this.props.history.push(`/events/${createdEvent.id}`);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 

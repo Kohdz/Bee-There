@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { Segment, Header, Comment } from 'semantic-ui-react';
 import EventDetailedChatForm from './EventDetailedChatForm';
 import { Link } from 'react-router-dom';
-import { formatDistance, isThisHour } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 class EventDetailedChat extends Component {
   state = {

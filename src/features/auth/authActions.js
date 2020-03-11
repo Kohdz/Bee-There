@@ -12,7 +12,7 @@ export const login = creds => {
         .signInWithEmailAndPassword(creds.email, creds.password);
       dispatch(closeModal());
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       throw new SubmissionError({
         // _error: error.message
         _error: 'Login failed'
@@ -32,7 +32,7 @@ export const registerUser = user => async (
     let createdUser = await firebase
       .auth()
       .createUserWithEmailAndPassword(user.email, user.password);
-    console.log(createdUser);
+    // console.log(createdUser);
     await createdUser.user.updateProfile({
       displayName: user.displayName
     });
@@ -43,7 +43,7 @@ export const registerUser = user => async (
     await firestore.set(`users/${createdUser.user.uid}`, { ...newUser });
     dispatch(closeModal());
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     throw new SubmissionError({
       _error: error.message
     });
@@ -71,7 +71,7 @@ export const socialLogin = selectedProvider => async (
       });
     }
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 

@@ -51,7 +51,7 @@ class TestComponent extends Component {
       await userDocRef.update({ displayName: 'testing' });
       toastr.success('Success');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toastr.error('Computer says no');
     }
   };
@@ -65,7 +65,7 @@ class TestComponent extends Component {
       });
       toastr.success('Success');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toastr.error('Computer says no');
     }
   };
@@ -83,7 +83,7 @@ class TestComponent extends Component {
       });
       toastr.success('Success');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toastr.error('Computer says no');
     }
   };
@@ -97,7 +97,7 @@ class TestComponent extends Component {
       });
       toastr.success('Success');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toastr.error('Computer says no');
     }
   };
@@ -111,7 +111,7 @@ class TestComponent extends Component {
       });
       toastr.success('Success');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toastr.error('Computer says no');
     }
   };

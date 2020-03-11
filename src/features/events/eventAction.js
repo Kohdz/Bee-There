@@ -7,7 +7,7 @@ import {
   asyncActionError,
   asyncActionFinish
 } from '../async/asyncActions';
-import { ASYNC_ACTION_FINSIH } from '../async/asyncConstants';
+// import { ASYNC_ACTION_FINSIH } from '../async/asyncConstants';
 
 export const createEvent = event => {
   return async (dispatch, getState, { getFirestore, getFirebase }) => {
@@ -146,7 +146,7 @@ export const getEventsForDashboard = lastEvent => async (
     dispatch(asyncActionFinish());
     return querySnap;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     dispatch(asyncActionError());
   }
 };
@@ -170,7 +170,7 @@ export const addEventComment = (eventId, values, parentId) => async (
   try {
     await firebase.push(`event_chat/${eventId}`, newComment);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     toastr.error('Oops', 'Problem adding comment');
   }
 };

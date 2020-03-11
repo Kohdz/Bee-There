@@ -6,10 +6,7 @@ import {
 } from '../features/async/asyncActions';
 import cuid from 'cuid';
 import firebase from '../app/config/firebase';
-import {
-  FETCH_EVENTS,
-  FETCH_USER_EVENTS
-} from '../features/events/eventConstants';
+import { FETCH_USER_EVENTS } from '../features/events/eventConstants';
 
 export const updateProfile = user => async (
   dispatch,
@@ -22,7 +19,7 @@ export const updateProfile = user => async (
     await firebase.updateProfile(updatedUser);
     toastr.success('Success', 'Your profile has been updated');
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 };
 
@@ -70,7 +67,7 @@ export const uploadProfileImage = (file, fileName) => async (
     );
     dispatch(asyncActionFinish());
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     dispatch(asyncActionError());
   }
 };
@@ -91,7 +88,7 @@ export const deletePhoto = photo => async (
       subcollections: [{ collection: 'photos', doc: photo.id }]
     });
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     throw new Error('Problem deleting the photo');
   }
 };
@@ -133,11 +130,11 @@ export const setMainPhoto = photo => async (dispatch, getState) => {
         });
       }
     }
-    console.log(batch);
+    // console.log(batch);
     await batch.commit();
     dispatch(asyncActionFinish());
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     dispatch(asyncActionError());
     throw new Error('Problem setting main photo');
   }
@@ -181,7 +178,7 @@ export const goingToEvent = event => async (
     dispatch(asyncActionFinish);
     toastr.success('Success', 'You have signed up to the event');
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     dispatch(asyncActionError());
     toastr.error('Oops', 'Problem signing up to the event');
   }
@@ -202,7 +199,7 @@ export const cancelGoingToEvent = event => async (
     await firestore.delete(`event_attendee/${event.id}_${user.uid}`);
     toastr.success('Success', 'You have removed yourself from the event');
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     toastr.error('Oops', 'Something went wrong');
   }
 };
@@ -258,7 +255,7 @@ export const getUserEvents = (userUid, activeTab) => async (
 
     dispatch(asyncActionFinish());
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     dispatch(asyncActionError());
   }
 };
