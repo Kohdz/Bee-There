@@ -125,16 +125,16 @@ export const addEventComment = (eventId, values, parentId) => async (
   const user = firebase.auth().currentUser;
   let newComment = {
     parentId: parentId,
-    displayName: profile.dispatch,
+    displayName: profile.displayName,
     photoURL: profile.photoURL || '/assets/user.png',
     uid: user.uid,
-    text: values.commnet,
+    text: values.comment,
     date: Date.now()
   };
   try {
     await firebase.push(`event_chat/${eventId}`, newComment);
   } catch (error) {
     console.log(error);
-    toastr.error('Opps', 'Problem adding comments');
+    toastr.error('Oops', 'Problem adding comment');
   }
 };
