@@ -1,12 +1,12 @@
 # Bee-There
 
+Live Site: [https://bee-thair.web.app/]
+
 ![](/docs/screenshots/eventsDashboard.png)
 
 ![](/docs/screenshots/eventDetailPage.png)
 
 Bee-There is a serverless CRUD web app that provides services for organizing in-person events. Based on Revents from [TryCatchLearn](https://github.com/trycatchLearn).
-
-Live Site: [https://bee-thair.web.app/]
 
 # Table of Contents
 
