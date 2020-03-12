@@ -19,7 +19,8 @@ Live Site: [https://bee-thair.web.app/]
    - [PhotoUpload](#photoUpload)
    - [SiteActivity](#siteActivity)
 3. [Design](#design)
-   - [ReactComponents](#reactComponents) -[DatabaseSchema](#databaseSchema)
+   - [ReactComponents](#reactComponents)
+   - [DatabaseSchema](#databaseSchema)
 4. [Future Implementation](#future-Implementation)
 
 # Implementation
